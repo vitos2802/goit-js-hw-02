@@ -3,26 +3,22 @@ let input;
 const numbers = [];
 let total = 0;
 
-const addNumbers = () => {
-  numbers.push(input);
-};
-
-const numbersSum = () => {
-  if (numbers.length > 0) {
-    for (const number of numbers) {
-      total += +number;
-    }
-  }
-  console.log(`Общая сумма чисел равна ${total}`);
-};
-
 do {
   input = prompt("Enter number:");
   if (isNaN(Number(input))) {
     alert("Было введено не число, попробуйте еще раз");
     continue;
   }
-  addNumbers();
+  numbers.push(input);
 } while (input !== null);
 
-numbersSum();
+const numbersSum = (values) => {
+  if (values.length > 0) {
+    for (const value of values) {
+      total += Number(value);
+    }
+  }
+  console.log(`Общая сумма чисел равна ${total}`);
+};
+
+numbersSum(numbers);

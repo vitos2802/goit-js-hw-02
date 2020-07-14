@@ -3,9 +3,7 @@ const formatString = function (string) {
   const stringLength = string.length;
 
   if (stringLength > 40) {
-    const stringMod = string.slice(0, 41).split(" ");
-    stringMod.push("...");
-    const result = stringMod.join(" ");
+    const result = `${string.slice(0, 40)}...`;
     return result;
   }
   return string;
